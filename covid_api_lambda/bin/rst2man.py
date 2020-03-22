@@ -1,4 +1,4 @@
-#!/usr/local/opt/python/bin/python3.7
+#!/Users/abdul.2.rahman/opt/anaconda3/bin/python3
 
 # Author: 
 # Contact: grubert@users.sf.net

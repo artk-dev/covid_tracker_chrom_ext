@@ -1,4 +1,4 @@
-#!/usr/local/opt/python/bin/python3.7
+#!/Users/abdul.2.rahman/opt/anaconda3/bin/python3
 
 # $Id: rst2html.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>
