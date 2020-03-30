@@ -11,6 +11,6 @@
     "browser_action":{
         "default_popup":"box.html",
         "default_title":"Covid Tracker"
-    }
-
+    },
+    "content_security_policy": "script-src-elem 'self' https://platform.twitter.com https://cdn.syndication.twimg.com; object-src 'self'"
 }

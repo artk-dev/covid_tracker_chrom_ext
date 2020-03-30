@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="utf-8">
+    <title>Covid Tracker</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/customcss.css" rel="stylesheet">
+    <script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js//jquery-3.4.1.min.js"></script>
 </head>
 <body>
-	<label>Suffolk:</label><br>
-	<label>4</label>
-	<button>show</button>
+	<div class = 'container big-box'>
+		<div class = 'row'>
+			<div class = 'col-12'>
+				<div class="contact-area">
+					<div class="contact">
+						<main>
+							<section>
+								<div class="content">
+									<aside>
+										<h1 id='case_count'>N/A</h1>
+										<p >cases in Suffolk</p>
+									</aside>
+									<div class="fa-3x">
+										<i class="fas fa-cog fa-spin"></i>
+									</div>
+									<button id='expand-btn'>
+										<span>More details</span>
+
+										<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z"></path> </g> </svg>
+									</button>
+								</div>
+
+								<div class="title"><p>More details</p></div>
+							</section>
+						</main>
+
+						<nav>
+							<a href="#" class="gmail">
+								<div class="content">
+									<h1 id='uk-case-count'>N/A</h1>
+									<span>cases in UK</span>
+								</div>
+							<img src='/static/img/error.svg' alt='warning' width='70' height='70' class='warning-icon'>
+							</a>
+
+							<a href="#" class="gmail">
+								<div class="content">
+									<h1 id='uk-death-count'>N/A</h1>
+									<span>deaths in UK</span>
+								</div>
+							</a>
+
+							<a href="#" class="gmail">
+								<div class="content">
+									<h1 id='uk-new-count'>N/A</h1>
+									<span>new cases in UK</span>
+								</div>
+							</a>
+						</nav>
+					</div>
+					<div class="icon-area">
+						<div class='round-icon'>
+							<img src='/static/img/home.svg' alt='Stay Home' width=80 height=80><br>
+						</div>
+						<h2 class='under-home-icon'>Stay Home</h2>
+						<div class='round-icon'>
+							<img src='/static/img/handwash.svg' alt='Stay Home' width=80 height=80><br>
+						</div>
+						<h2 class='under-wash-icon'>Keep Clean</h2>
+						<div class='round-icon'>
+							<img src='/static/img/sun.svg' alt='Stay Home' width=80 height=80><br>
+						</div>
+						<h2 class='under-earth-icon'>We'll get through this</h2>
+					</div>
+					<div class='next-button'>
+							<button id='next-btn-1' class='next-btn'>
+								<img src='/static/img/right-arrow.svg' width=50 height=50>
+							</button>
+					</div>
+				</div>
+				<div class="contact-area2 inactive">
+					<p>Interactive Map: click to see more details</p>
+					<div class='covid-map'>
+						<style>.embed-container {position: relative; padding-bottom: 143%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="350" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Dashboard Web Map" src="https://www.arcgis.com/apps/Embed/index.html?webmap=6ef2b5899ca449f39c822eab7bfb1dff&extent=-13.6015,48.882,7.6241,55.4564&zoom=true&previewImage=false&scale=true&search=false&searchextent=true&disable_scroll=false&theme=light"></iframe></div>
+					</div>
+					<div class='next-button-2'>
+							<button id='next-btn-2' class='next-btn'>
+								<img src='/static/img/right-arrow.svg' width=50 height=50>
+							</button>
+					</div>
+					<div class='prev-button-2'>
+							<button id='prev-btn-2' class='next-btn'>
+								<img src='/static/img/left-arrow.svg' width=50 height=50>
+							</button>
+					</div>
+				</div>
+				<div class="contact-area3 inactive">
+					<p>Follow latest here:<p>
+					<div class='prev-button-2'>
+							<button id='prev-btn-3' class='next-btn'>
+								<img src='/static/img/left-arrow.svg' width=50 height=50>
+							</button>
+					</div>
+					<div class='twitter-feed-box-1'>
+						<a class="twitter-timeline" data-lang="en" data-width="350" data-height="500" data-theme="dark" href="https://twitter.com/PHE_uk?ref_src=twsrc%5Etfw">Tweets by PHEuk</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
-<script src='tracker.js'></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='tracker.js' charset='utf-8'></script>
 </html>
