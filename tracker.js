@@ -5,20 +5,20 @@ $('button#expand-btn').click(function(){
   });
 
 $('button#next-btn-1').click(function(){
-    $('div.contact-area').toggleClass('inactive')
-    $('div.contact-area2').toggleClass('inactive')
+    $('div.contact-area').toggleClass('d-none')
+    $('div.contact-area2').toggleClass('d-none')
 });
 $('button#prev-btn-2').click(function(){
-    $('div.contact-area').toggleClass('inactive')
-    $('div.contact-area2').toggleClass('inactive')
+    $('div.contact-area').toggleClass('d-none')
+    $('div.contact-area2').toggleClass('d-none')
 });
 $('button#next-btn-2').click(function(){
-    $('div.contact-area2').toggleClass('inactive')
-    $('div.contact-area3').toggleClass('inactive')
+    $('div.contact-area2').toggleClass('d-none')
+    $('div.contact-area3').toggleClass('d-none')
 });
 $('button#prev-btn-3').click(function(){
-    $('div.contact-area3').toggleClass('inactive')
-    $('div.contact-area2').toggleClass('inactive')
+    $('div.contact-area3').toggleClass('d-none')
+    $('div.contact-area2').toggleClass('d-none')
 });
 document.addEventListener('DOMContentLoaded', function(){
     const url='https://j1ryxp2q26.execute-api.eu-west-2.amazonaws.com/default/covidDataUpdater';

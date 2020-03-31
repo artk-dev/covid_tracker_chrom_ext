@@ -21,14 +21,15 @@
 										<h1 id='case_count'>N/A</h1>
 										<p >cases in Suffolk</p>
 									</aside>
-									<div class="fa-3x">
-										<i class="fas fa-cog fa-spin"></i>
-									</div>
 									<button id='expand-btn'>
 										<span>More details</span>
-
 										<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z"></path> </g> </svg>
 									</button>
+									<div classs='settings-area'>
+											<button id="settings-btn">
+												<svg style="position:absolute;"src="/static/svgs/cog-solid.svg" height="30" width="30"></svg>
+											</button>
+									</div>
 								</div>
 
 								<div class="title"><p>More details</p></div>
@@ -79,10 +80,10 @@
 							</button>
 					</div>
 				</div>
-				<div class="contact-area2 inactive">
+				<div class="contact-area2 d-none">
 					<p>Interactive Map: click to see more details</p>
 					<div class='covid-map'>
-						<style>.embed-container {position: relative; padding-bottom: 143%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="350" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Dashboard Web Map" src="https://www.arcgis.com/apps/Embed/index.html?webmap=6ef2b5899ca449f39c822eab7bfb1dff&extent=-13.6015,48.882,7.6241,55.4564&zoom=true&previewImage=false&scale=true&search=false&searchextent=true&disable_scroll=false&theme=light"></iframe></div>
+						<style>.embed-container {position: relative; padding-bottom: 80%; height: 400; width: 500;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: inherit; height: inherit;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Dashboard Web Map" src="https://www.arcgis.com/apps/Embed/index.html?webmap=6ef2b5899ca449f39c822eab7bfb1dff&extent=-21.3316,47.3833,21.1195,61.0475&zoom=true&previewImage=false&scale=false&disable_scroll=false&theme=light"></iframe></div>
 					</div>
 					<div class='next-button-2'>
 							<button id='next-btn-2' class='next-btn'>
@@ -95,7 +96,7 @@
 							</button>
 					</div>
 				</div>
-				<div class="contact-area3 inactive">
+				<div class="contact-area3 d-none">
 					<p>Follow latest here:<p>
 					<div class='prev-button-2'>
 							<button id='prev-btn-3' class='next-btn'>

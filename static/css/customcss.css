@@ -65,6 +65,16 @@ body {
 
 /* CONTACT
 ========================================== */
+.settings-area{
+  top: 7px;
+  right: -48px;
+  position: absolute;
+}
+#settings-btn{
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
 .contact-area {
   margin-top: -5%;
   width: 100%;
@@ -244,7 +254,7 @@ button.next-btn:hover{
   -o-transform: scale(0);
   transform: scale(0);
 }
-.contact main button {
+.contact main button#expand-btn {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -270,7 +280,7 @@ button.next-btn:hover{
   z-index: 10;
   font-family: inherit;
 }
-.contact main button span {
+.contact main button#expand-btn span {
   opacity: 1;
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
@@ -282,7 +292,7 @@ button.next-btn:hover{
   float: left;
   padding: 15px 0px;
 }
-.contact main button svg {
+.contact main button#expand-btn svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -297,10 +307,10 @@ button.next-btn:hover{
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-.contact main button svg path {
+.contact main button#expand-btn svg path {
   fill: #c63535;
 }
-.contact main button.active {
+.contact main button#expand-btn.active {
   margin-right: 0;
   right: 20px;
   width: 44px;
@@ -312,12 +322,12 @@ button.next-btn:hover{
   border-radius: 65px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
-.contact main button.active span {
+.contact main button#expand-btn.active span {
   opacity: 0;
   transition-delay: 0s;
   width: 200px;
 }
-.contact main button.active svg {
+.contact main button#expand-btn.active svg {
   opacity: 1;
   transition-delay: 0.5s;
 }
