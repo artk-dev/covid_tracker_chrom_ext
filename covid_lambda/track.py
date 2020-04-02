@@ -70,6 +70,9 @@ def lambda_handler(event, context):
         totals.update({"places":places,"casecount":cases_result})
         return {
             'statusCode': 200,
+            'headers':{
+                'Access-Control-Allow-Origin':'*'
+            },
             'body': json.dumps(totals)
         }
     else:
