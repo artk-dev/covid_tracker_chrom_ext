@@ -2,12 +2,6 @@
     "name":"Covid19 Tracker Beta",
     "version":"0.1",
     "manifest_version":2,
-    "content_scripts":[
-        {
-            "matches":["<all_urls>"],
-            "js":["track.js"]
-        }
-    ],
     "browser_action":{
         "default_icon":"icon.png",
         "default_popup":"box.html",
@@ -15,6 +9,7 @@
     },
     "content_security_policy": "child-src *; script-src 'self' https://platform.twitter.com https://cdn.syndication.twimg.com https://abs.twimg.com; object-src 'self' https://abs.twimg.com; frame-ancestors 'self' twitter.com",
     "permissions":[
+        "activeTab",
         "storage"
     ]
 }

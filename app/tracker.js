@@ -111,7 +111,9 @@ function downloadCovidData(){
 function setCovidValues(location){
     const url='https://j1ryxp2q26.execute-api.eu-west-2.amazonaws.com/default/covidDataUpdater';
     const query_data = JSON.stringify({county:location,query:"*"});
+    console.log('heeey')
     $.post(url, query_data, function(data){
+        console.log(data)
         var data_dict = JSON.parse(data.body);
         var places = data_dict['places'];
         $($('#loc-label')[0]).html(location);
