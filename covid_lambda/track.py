@@ -9,14 +9,32 @@ def lambda_handler(event, context):
     body = event
     query = body['query']
 
-    result = requests.get('https://services1.arcgis.com/0IrmI40n5ZYxTUrV/ArcGIS/rest/services/CountyUAs_cases/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=GSS_NM%2CTotalCases&returnGeometry=false&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=TotalCases&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token=')
+    # Getting UK wide results
+    result = requests.get('https://c19downloads.azureedge.net/downloads/data/data_latest.json')
     data = json.loads(result.text)
-    features = data["features"]
 
-    result2 = requests.get('https://services1.arcgis.com/0IrmI40n5ZYxTUrV/arcgis/rest/services/DailyIndicators/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=102100&resultOffset=0&resultRecordCount=50&cacheHint=true')
-    data2= json.loads(result2.text)
-    data2=data2['features'][0]['attributes']
-    totals = {"TotalUKCases":data2["TotalUKCases"],"NewUKCases":data2["NewUKCases"],"TotalUKDeaths":data2["TotalUKDeaths"]}
+    ukcases = "N/A"
+    newcases = "N/A"
+    deaths = "N/A"
+
+    for item in data['overview'].keys():
+        dict1 = data['overview'][item]
+        try:
+            if dict1['name']['value'] == 'United Kingdom':
+                ukcases = dict1['totalCases']['value']
+                newcases = dict1['newCases']['value']
+                deaths = dict1['deaths']['value']
+                break
+        except KeyError:
+            continue
+        except TypeError:
+            continue
+
+    totals = {"TotalUKCases":ukcases, "NewUKCases":newcases, "TotalUKDeaths":deaths}
+    #========================
+    result = requests.get('https://c19downloads.azureedge.net/downloads/data/utlas_latest.json')
+    data = json.loads(result.text)
+
     #Adding a timestamp
     now = datetime.datetime.now()
     timestamp_simple = now.strftime('%Y%m%d%H%M%S')
@@ -25,11 +43,16 @@ def lambda_handler(event, context):
     places = []
 
     #Restructuring data into a more legible format. Format: <county>:<total_cases>
-    for item in features:
-        county = item['attributes']['GSS_NM']
-        cases = item['attributes']['TotalCases']
-        tracker_dict.update({county:cases})
-        places.append(county)
+    for item in data.keys():
+        dict1 = data[item]
+        try:
+            county = dict1['name']['value']
+            casecount = dict1['totalCases']['value']
+            places.append(county)
+            tracker_dict[county] = casecount
+        except KeyError:
+            continue
+
     places.sort()
 
     #------------------------------------------------------
